@@ -4,8 +4,8 @@
 
 
 // Configuration du réseau WiFi
-const char* ssid = "Erwen1";  // Remplacez par votre SSID WiFi
-const char* password = "20212023";  // Remplacez par votre mot de passe WiFi
+const char* ssid = "nom_wifi";  // Remplacez par votre SSID WiFi
+const char* password = "MDP";  // Remplacez par votre mot de passe WiFi
 
 
 // Serveur MQTT
@@ -105,12 +105,3 @@ void loop() {
  }
  client.loop();
 }
-
-
-
-
-
-
-
-
-

@@ -9,8 +9,8 @@
 const char topic[] = "tp_popo/Tamanoir";
 
 
-char ssid[]= "RedmiF";
-char pass[]= "x5pihawjk9a8rqn";
+char ssid[]= "nom_wifi";
+char pass[]= "MDP";
 IPAddress ip;
 
 WiFiClient espClient;
@@ -65,14 +65,7 @@ void loop() {
     mqttClient.print(msg);
     mqttClient.endMessage();
   }
-  /*
-  reconnect();
-  client.loop(); 
-  float temp = random(30);
-  mqtt_publish("tp_popo/Tamanoir",temp);
-  Serial.print("qqchose : ");
-  Serial.println(temp); delay(10000);
-  */
+
 
 }
 

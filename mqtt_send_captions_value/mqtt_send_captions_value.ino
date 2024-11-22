@@ -16,8 +16,8 @@ int counter=0;
 
 const char topic[] = "tp_popo/LoRaSetup";
 
-char ssid[]= "ReseauLilian";
-char pass[]= "cortux2003";
+char ssid[]= "Rnom_wifi";
+char pass[]= "MDP";
 IPAddress ip;
 
 WiFiClient espClient;
@@ -26,31 +26,14 @@ MqttClient mqttClient(espClient);
 
 void setup() {
   Serial.begin(115200);
-  attachInterrupt(PIR, pinChanged, RISING);
-  WiFi.disconnect(true);
-  delay(1000);
-  WiFi.begin(ssid, pass);
-  while(WiFi.status() != WL_CONNECTED) {
-    delay(500); Serial.print(".");
-  }
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IPAddress : ");
-  Serial.println(ip);
-  Serial.print("Wifi setup ok");
-  delay(1000);
-  Serial.print("Attempting to connect to the MQTT broker: ");
-  Serial.println(broker);
-  
-  if (!mqttClient.connect(broker, port)) {
-    Serial.print("MQTT connection failed! Error code = ");
-    Serial.println(mqttClient.connectError());
-    while (1);
-  }
 
-  Serial.println("You're connected to the MQTT broker!");
-  Serial.println();
-  //client.publish("tp_popo/Tamanoir", "Hello from Florian");
+  attachInterrupt(PIR, pinChanged, RISING);
+
+  delay(1000);  
 }
+
+
+float d1=12.0, d2=321.54;
 
 void loop() {
 
@@ -62,7 +45,6 @@ void loop() {
     Serial.println(counter);
   }
 
-  mqttClient.poll();
 
   char msg[] = "Hello from Florian/Colin";
   char message[100];
@@ -76,13 +58,6 @@ void loop() {
   mqttClient.print(message);
   mqttClient.endMessage();
   delay(4000);
-  /*
-  reconnect();
-  client.loop(); 
-  float temp = random(30);
-  mqtt_publish("tp_popo/Tamanoir",temp);
-  Serial.print("qqchose : ");
-  Serial.println(temp); delay(10000);
-  */
+  
 
 }
