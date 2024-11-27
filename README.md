@@ -39,16 +39,16 @@ Groupe 2. Ecouter les messages mqtt en en déduire les valeurs pour un envoi de 
 ### 3. Communiquer via LoRa des données
 
 Groupe 1: Écouter les messages LoRa et les afficher.
+Pour envoyer des message à partir de LoRan, on défini les paramètre de transfert(fréquence, spread factor, la bande passante). On définit également le pin sur lequel on va émettre.
+Au moment de l'envoie des paquets LoRa on défini la taille des paquets envoyé.
 
 Groupe 2. Envoyer un message LoRa contenant une valeur venant d'un capteur.
+Pour la réception de paquets utilisant la modulation LoRa, nous définissons les mêmes paramètres que pour l'envoi, tels que la fréquence, le débit binaire, et le mode LoRa. Cependant, nous ajoutons une fonction spécifique qui détermine le comportement du système en cas de réception d'un paquet. Cette fonction permet de traiter les données reçues, par exemple en les affichant, en les stockant, ou en déclenchant une action spécifique en fonction du contenu du paquet.
 
 ## 3. Inversion
 
 Après avoir réussi une communication, la carte du groupe 1 et celle du groupe 2 inversent leurs rôles.
 
-## 4. Bluetooth (ou BLE)
-
-À la place de communiquer les valeurs venant d'un capteur, continuer la discussion pour ouvrir un canal Bluetooth.
 
 Colin TRÈVE
 Florian NAVARRO
